@@ -1,6 +1,8 @@
 package com.example.jwt.model;
 
 import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -10,7 +12,8 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-@Data
+@Getter
+@Setter
 @Entity
 public class User {
 
@@ -18,7 +21,7 @@ public class User {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
     private String username;
-    private String paassword;
+    private String password;
     private String roles;       // USER, ADMIN
 
     public List<String> getRoleList() {
